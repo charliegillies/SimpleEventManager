@@ -35,14 +35,18 @@ Now fire an event so you can see it being handled.
 eventManager.Invoke(new PrintMsgEvent("Did you print this message?"));
 ```
 
-This is the basics of using the program. You can unsubscribe from the event by using the same object that was returned from the Subscribe method call.
+This is the basics of using SimpleEvents. 
+
+You can unsubscribe from the event by using the same object that was returned from the Subscribe method call.
 
 ```
 // Now remove the listener & invoke again
 eventManager.Unsubscribe(listener);
 ```
 
-You can also use the QueueInvoke and InvokeQueuedEvents method. For example:
+You can also use the QueueInvoke and InvokeQueuedEvents method. You can use this for delaying event invokation. The best practice would be to call InvokeQueuedEvents every frame. 
+
+For example:
 
 ```
 // Queue a few print message events
@@ -52,4 +56,3 @@ eventManager.QueueInvoke(new PrintMsgEvent("3rd queued message!"));
 // Invoke all of the queued events
 eventManager.InvokeQueuedEvents();
 ```
-
