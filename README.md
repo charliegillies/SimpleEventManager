@@ -6,15 +6,15 @@ Simple event manager that I'm using for a small tower defense game in C#.
 Create a new "PrintMsgEvent". This event derives from BaseEvent and contains a simple string, which is a message that must be printed.
 
 ```
-    class PrintMsgEvent : BaseEvent
-    {
-        public string Message;
+class PrintMsgEvent : BaseEvent
+{
+    public string Message;
 
-        public PrintMsgEvent(string message)
-        {
-            Message = message;
-        }
+    public PrintMsgEvent(string message)
+    {
+        Message = message;
     }
+}
 ```
 
 Now create a simple test program that listens for this event being fired and handles it appropriately.
